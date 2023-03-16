@@ -63,20 +63,16 @@ jobs:
           java-version: 11
 
       - uses: gradle/gradle-build-action@v2
-      - name: Setup Gradle and clean build and check coverage
+      - name: Setup Gradle and clean build firstProject
         working-directory: kotlin/firstProject/
         run: |
           gradle clean build
 
-      # ℹ️ Command-line programs to run using the OS shell.
-      # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
-
-      #   If the Autobuild fails above, remove it and uncomment the following three lines.
-      #   modify them (or add more) to build your code if your project, please refer to the EXAMPLE below for guidance.
-
-      # - run: |
-      #     echo "Run, Build Application using script"
-      #     ./location_of_script_within_repo/buildscript.sh
+      - uses: gradle/gradle-build-action@v2
+      - name: Setup Gradle and clean build secondProject
+        working-directory: kotlin/secondProject/
+        run: |
+          gradle clean build
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
