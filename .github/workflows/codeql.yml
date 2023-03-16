@@ -57,6 +57,10 @@ jobs:
 
     # Autobuild attempts to build any compiled languages  (C/C++, C#, Go, or Java).
     # If this step fails, then you should remove it and run the build manually (see below)
+    - uses: actions/setup-java@v3
+      with:
+        distribution: 'corretto'
+        java-version: 11
     - uses: gradle/gradle-build-action@v2
     - name: Autobuild
     #  uses: github/codeql-action/autobuild@v2
