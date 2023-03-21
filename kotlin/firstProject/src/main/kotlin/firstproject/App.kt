@@ -3,6 +3,8 @@
  */
 package firstproject
 
+import pluginmodule.Library
+
 class App {
     val greeting: String
         get() {
@@ -11,5 +13,6 @@ class App {
 }
 
 fun main() {
+    Library().someLibraryMethod()
     println(App().greeting)
 }
