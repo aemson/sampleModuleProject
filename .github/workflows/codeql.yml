@@ -64,6 +64,9 @@ jobs:
 
       - uses: gradle/gradle-build-action@v2
       - name: Setup Gradle and clean build firstProject
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          TOKEN: ${{ secrets.TOKEN }}
         working-directory: kotlin/firstProject/
         run: |
           gradle clean build
