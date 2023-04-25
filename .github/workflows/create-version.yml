@@ -47,7 +47,7 @@ jobs:
       - name: git-sync
         uses: wei/git-sync@v3
         with:
-          source_repo: "aemson/sampleModuleProject"
+          source_repo: "git@github.com:aemson/sampleModuleProject.git"
           source_branch: "develop"
-          destination_repo: "aemson/sampleModuleProject"
+          destination_repo: "git@github.com:aemson/sampleModuleProject.git"
           destination_branch: "main"
